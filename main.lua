@@ -20,12 +20,21 @@ function love.load()
 
     -- SET UP STATE MACHINE
     game_State_Machine = StateMachine {
+        ['start'] = function() return StartState() end,
+        ['play'] = function() return PlayState() end
     }
-    -- game_State_Machine:change('start');
+    game_State_Machine:change('start');
     
 
     -- SET UP KEY CHECK
     love.keyboard.keysPressed = {};
+
+    -- SET UP MOUSE CHECK
+    love.mouse.keysPressed = {};
+    love.mouse.keysReleased = {};
+
+
+
 end
 
 
@@ -34,9 +43,7 @@ function love.update(dt)
     -- Update timer
     Timer.update(dt);
 
-    -- game_State_Machine:update(dt);
-
-    love.keyboard.keysPressed = {};
+    game_State_Machine:update(dt);
 end
 
 
@@ -44,8 +51,9 @@ end
 function love.draw()
     push:start()
 
-    -- game_State_Machine:render();
+    game_State_Machine:render();
 
+   
     displayFPS();
     
     push:finish()
@@ -63,9 +71,31 @@ function love.keypressed(key)
     love.keyboard.keysPressed[key] = true;
 end
 
--- FUNCTION TO CHECK IF A SPECIFIC KEY WAS PRESSED
+-- FUNCTION TO CHECK IF A SPECIFIC KEY IN KEYBOARD WAS PRESSED
 function love.keyboard.wasPressed(key)
     return love.keyboard.keysPressed[key];
+end
+
+
+-- IF MOUSE PRESSED
+function love.mousepressed(x, y, key)
+    love.mouse.keysPressed[key] = true;
+end
+
+-- CHECK MOUSE PRESSES
+function love.mouse.wasPressed(key)
+    return love.mouse.keysPressed[key];
+end
+
+
+-- IF MOUSE RELEASED
+function love.mousereleased(x, y, key)
+    love.mouse.keysReleased[key] = true;
+end
+
+-- CHECK MOUSE PRESSES
+function love.mouse.wasPressed(key)
+    return love.mouse.keysPressed[key];
 end
 
 -- DISPLAY FPS FUNCTION

@@ -15,23 +15,18 @@ require 'src/StateMachine'
 -- Ultility functions
 require 'src/Ultil'
 
--- Animation file
-
--- Hitbox, hurt box file
-
-
 -- Level generation file
 
 -- Game component
-
-
+require 'src/Alien'
+require 'src/Background'
 -- Game world
 
 
 -- Game states
 require 'src/states/BaseState'
 
--- require 'src/states/game/StartState'
--- require 'src/states/game/PlayState'
+require 'src/states/StartState'
+require 'src/states/PlayState'
 -- require 'src/states/game/GameOverState'
 
