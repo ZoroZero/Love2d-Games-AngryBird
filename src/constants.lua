@@ -48,6 +48,8 @@ game_Textures = {
     ['colored_mushroom'] = love.graphics.newImage('assets/graphics/colored_shroom.png'),
     ['wood'] = love.graphics.newImage('assets/graphics/wood.png'),
     ['tiles'] = love.graphics.newImage('assets/graphics/tiles.png'),
+    -- arrow for trajectory
+    ['arrow'] = love.graphics.newImage('assets/graphics/arrow.png')
 }
 
 
@@ -62,3 +64,5 @@ game_Frames = {
     },
     ['tiles'] = generateQuad(game_Textures['tiles'], 35, 35),
 }
+
+game_Frames['alien'][9]:setViewport(105.5, 35.5, 35, 34.2)

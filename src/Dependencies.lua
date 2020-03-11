@@ -22,7 +22,7 @@ require 'src/Alien'
 require 'src/Background'
 require 'src/Obstacle'
 require 'src/Level'
--- Game world
+require 'src/PlayerLauncher'
 
 
 -- Game states

@@ -32,9 +32,6 @@ function love.load()
     -- SET UP MOUSE CHECK
     love.mouse.keysPressed = {};
     love.mouse.keysReleased = {};
-
-
-
 end
 
 
@@ -44,6 +41,12 @@ function love.update(dt)
     Timer.update(dt);
 
     game_State_Machine:update(dt);
+
+    love.keyboard.keysPressed = {};
+
+    -- SET UP MOUSE CHECK
+    love.mouse.keysPressed = {};
+    love.mouse.keysReleased = {};
 end
 
 
@@ -94,8 +97,8 @@ function love.mousereleased(x, y, key)
 end
 
 -- CHECK MOUSE PRESSES
-function love.mouse.wasPressed(key)
-    return love.mouse.keysPressed[key];
+function love.mouse.wasReleased(key)
+    return love.mouse.keysReleased[key];
 end
 
 -- DISPLAY FPS FUNCTION

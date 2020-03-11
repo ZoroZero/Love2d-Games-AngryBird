@@ -15,8 +15,8 @@ function Alien:init(world, type, x, y, userData)
         self.shape = love.physics.newRectangleShape(35,35);
         self.frame = math.random(5);
     else
-        self.shape = love.physics.newCircleShape(17);
-        self.frame = math.random(9,10);
+        self.shape = love.physics.newCircleShape(17.5);
+        self.frame = 9;
     end
 
     -- FIXTURE

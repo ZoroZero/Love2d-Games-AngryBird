@@ -43,7 +43,7 @@ end
 function StartState:update(dt)
     self.world:update(dt);
 
-    if love.mouse.wasPressed(1)then 
+    if love.mouse.wasPressed(1) then 
         game_State_Machine:change('play');
     end
 end
