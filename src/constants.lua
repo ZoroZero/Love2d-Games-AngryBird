@@ -44,10 +44,17 @@ game_Textures = {
     ['colored_desert'] = love.graphics.newImage('assets/graphics/colored_desert.png'),
     ['colored_land'] = love.graphics.newImage('assets/graphics/colored_land.png'),
     ['colored_mushroom'] = love.graphics.newImage('assets/graphics/colored_shroom.png'),
+    ['wood'] = love.graphics.newImage('assets/graphics/wood.png')
 }
 
 
 -- GAME FRAMES
 game_Frames = {
-    ['alien'] = generateQuad(game_Textures['alien'], 35, 35)
+    ['alien'] = generateQuad(game_Textures['alien'], 35, 35),
+    ['wood'] = {
+        love.graphics.newQuad(0, 0, 110, 35, game_Textures['wood']:getDimensions()),
+        love.graphics.newQuad(0, 35, 110, 35, game_Textures['wood']:getDimensions()),
+        love.graphics.newQuad(320, 180, 35, 110, game_Textures['wood']:getDimensions()),
+        love.graphics.newQuad(355, 355, 35, 110, game_Textures['wood']:getDimensions())
+    }
 }

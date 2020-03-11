@@ -20,6 +20,7 @@ require 'src/Ultil'
 -- Game component
 require 'src/Alien'
 require 'src/Background'
+require 'src/Obstacle'
 -- Game world
 
 
