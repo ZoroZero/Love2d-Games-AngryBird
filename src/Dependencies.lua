@@ -21,6 +21,7 @@ require 'src/Ultil'
 require 'src/Alien'
 require 'src/Background'
 require 'src/Obstacle'
+require 'src/Level'
 -- Game world
 
 

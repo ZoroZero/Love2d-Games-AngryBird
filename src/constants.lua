@@ -11,8 +11,10 @@ VIRTUAL_HEIGHT = 360;
 -- TILE SIZE
 TILE_SIZE = 16;
 
+-- ALIEN DIMENSIONS
+ALIEN_SIZE = 35;
 -- BACKGROUND SCROLLING SPEED
-BACKGROUND_SCROLLING_SPEED = 50;
+BACKGROUND_SCROLLING_SPEED = 100;
 
 -- SOUND
 game_Sounds = {
@@ -44,7 +46,8 @@ game_Textures = {
     ['colored_desert'] = love.graphics.newImage('assets/graphics/colored_desert.png'),
     ['colored_land'] = love.graphics.newImage('assets/graphics/colored_land.png'),
     ['colored_mushroom'] = love.graphics.newImage('assets/graphics/colored_shroom.png'),
-    ['wood'] = love.graphics.newImage('assets/graphics/wood.png')
+    ['wood'] = love.graphics.newImage('assets/graphics/wood.png'),
+    ['tiles'] = love.graphics.newImage('assets/graphics/tiles.png'),
 }
 
 
@@ -56,5 +59,6 @@ game_Frames = {
         love.graphics.newQuad(0, 35, 110, 35, game_Textures['wood']:getDimensions()),
         love.graphics.newQuad(320, 180, 35, 110, game_Textures['wood']:getDimensions()),
         love.graphics.newQuad(355, 355, 35, 110, game_Textures['wood']:getDimensions())
-    }
+    },
+    ['tiles'] = generateQuad(game_Textures['tiles'], 35, 35),
 }

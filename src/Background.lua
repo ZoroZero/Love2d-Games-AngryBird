@@ -12,9 +12,9 @@ end
 
 -- UPDATE
 function Background:update(dt)
-    if love.graphics.wasPressed('left') then 
+    if love.keyboard.isDown('left') then 
         self.offset_X = self.offset_X - BACKGROUND_SCROLLING_SPEED*dt;
-    elseif love.graphics.wasPressed('right') then
+    elseif love.keyboard.isDown('right') then
         self.offset_X = self.offset_X + BACKGROUND_SCROLLING_SPEED*dt;
     end
     
